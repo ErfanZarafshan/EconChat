@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: econ-chat-db
+    environment:
+      POSTGRES_USER: econ
+      POSTGRES_PASSWORD: econ
+      POSTGRES_DB: econ_chat
+    ports:
+      - "5432:5432"
+    volumes:
+      - econ-chat-data:/var/lib/postgresql/data
+
+volumes:
+  econ-chat-data:
